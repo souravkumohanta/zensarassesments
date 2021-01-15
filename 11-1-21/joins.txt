@@ -1,0 +1,213 @@
+joins 
+
+mysql> select j.job_title,jh.employee_id,datediff(jh.end_date,jh.start_date),jh.department_id from jobs j,job_history jh where department_id=20;
++---------------------------------+-------------+-------------------------------------+---------------+
+| job_title                       | employee_id | datediff(jh.end_date,jh.start_date) | department_id |
++---------------------------------+-------------+-------------------------------------+---------------+
+| Public Accountant               |         201 |                                1401 |            20 |
+| Accounting Manager              |         201 |                                1401 |            20 |
+| Administration Assistant        |         201 |                                1401 |            20 |
+| President                       |         201 |                                1401 |            20 |
+| Administration Vice President   |         201 |                                1401 |            20 |
+| Accountant                      |         201 |                                1401 |            20 |
+| Finance Manager                 |         201 |                                1401 |            20 |
+| Human Resources Representative  |         201 |                                1401 |            20 |
+| Programmer                      |         201 |                                1401 |            20 |
+| Marketing Manager               |         201 |                                1401 |            20 |
+| Marketing Representative        |         201 |                                1401 |            20 |
+| Public Relations Representative |         201 |                                1401 |            20 |
+| Purchasing Clerk                |         201 |                                1401 |            20 |
+| Purchasing Manager              |         201 |                                1401 |            20 |
+| Sales Manager                   |         201 |                                1401 |            20 |
+| Sales Representative            |         201 |                                1401 |            20 |
+| Shipping Clerk                  |         201 |                                1401 |            20 |
+| Stock Clerk                     |         201 |                                1401 |            20 |
+| Stock Manager                   |         201 |                                1401 |            20 |
++---------------------------------+-------------+-------------------------------------+---------------+
+19 rows in set (0.00 sec)
+
+mysql> select j.job_title,jh.employee_id,datediff(jh.end_date,jh.start_date),jh.department_id from jobs j,job_history jh where department_id=30;
+Empty set (0.00 sec)
+
+2.mysql> select dep.department_name , emp.first_name  from employees emp,departments dep where emp.employee_id=dep.manager_id;
++------------------+------------+
+| department_name  | first_name |
++------------------+------------+
+| Administration   | Jennifer   |
+| Marketing        | Michael    |
+| Purchasing       | Den        |
+| Human Resources  | Susan      |
+| Shipping         | Adam       |
+| IT               | Alexander  |
+| Public Relations | Hermann    |
+| Sales            | John       |
+| Executive        | Steven     |
+| Finance          | Nancy      |
+| Accounting       | Shelley    |
++------------------+------------+
+11 rows in set (0.00 sec)
+
+3.mysql> select dep.department_name , emp.first_name,l.city from employees emp,departments dep,locations l where emp.employee_id=dep.manager_id and dep.location_id=l.location_id;
++------------------+------------+---------------------+
+| department_name  | first_name | city                |
++------------------+------------+---------------------+
+| Administration   | Jennifer   | Seattle             |
+| Marketing        | Michael    | Toronto             |
+| Purchasing       | Den        | Seattle             |
+| Human Resources  | Susan      | London              |
+| Shipping         | Adam       | South San Francisco |
+| IT               | Alexander  | Southlake           |
+| Public Relations | Hermann    | Munich              |
+| Sales            | John       | Oxford              |
+| Executive        | Steven     | Seattle             |
+| Finance          | Nancy      | Seattle             |
+| Accounting       | Shelley    | Seattle             |
++------------------+------------+---------------------+
+11 rows in set (0.00 sec)
+
+4.mysql> select dep.department_name,ct.country_name,l.city from departments dep,countries ct ,locations l where dep.location_id=l.location_id and l.country_id=ct.country_id;
++----------------------+--------------------------+---------------------+
+| department_name      | country_name             | city                |
++----------------------+--------------------------+---------------------+
+| Administration       | United States of America | Seattle             |
+| Marketing            | Canada                   | Toronto             |
+| Purchasing           | United States of America | Seattle             |
+| Human Resources      | United Kingdom           | London              |
+| Shipping             | United States of America | South San Francisco |
+| IT                   | United States of America | Southlake           |
+| Public Relations     | Germany                  | Munich              |
+| Sales                | United Kingdom           | Oxford              |
+| Executive            | United States of America | Seattle             |
+| Finance              | United States of America | Seattle             |
+| Accounting           | United States of America | Seattle             |
+| Treasury             | United States of America | Seattle             |
+| Corporate Tax        | United States of America | Seattle             |
+| Control And Credit   | United States of America | Seattle             |
+| Shareholder Services | United States of America | Seattle             |
+| Benefits             | United States of America | Seattle             |
+| Manufacturing        | United States of America | Seattle             |
+| Construction         | United States of America | Seattle             |
+| Contracting          | United States of America | Seattle             |
+| Operations           | United States of America | Seattle             |
+| IT Support           | United States of America | Seattle             |
+| NOC                  | United States of America | Seattle             |
+| IT Helpdesk          | United States of America | Seattle             |
+| Government Sales     | United States of America | Seattle             |
+| Retail Sales         | United States of America | Seattle             |
+| Recruiting           | United States of America | Seattle             |
+| Payroll              | United States of America | Seattle             |
++----------------------+--------------------------+---------------------+
+27 rows in set (0.00 sec)
+
+5.mysql> select emp.first_name ,ct.country_name from departments,locations,employees emp,countries ct where emp.department_id=departments.department_id and departments.location_id=locations.location_id and locations.country_id=ct.country_id;
++-------------+--------------------------+
+| first_name  | country_name             |
++-------------+--------------------------+
+| Alexander   | United States of America |
+| Bruce       | United States of America |
+| David       | United States of America |
+| Valli       | United States of America |
+| Diana       | United States of America |
+| Matthew     | United States of America |
+| Adam        | United States of America |
+| Payam       | United States of America |
+| Shanta      | United States of America |
+| Kevin       | United States of America |
+| Julia       | United States of America |
+| Irene       | United States of America |
+| James       | United States of America |
+| Steven      | United States of America |
+| Laura       | United States of America |
+| Mozhe       | United States of America |
+| James       | United States of America |
+| TJ          | United States of America |
+| Jason       | United States of America |
+| Michael     | United States of America |
+| Ki          | United States of America |
+| Hazel       | United States of America |
+| Renske      | United States of America |
+| Stephen     | United States of America |
+| John        | United States of America |
+| Joshua      | United States of America |
+| Trenna      | United States of America |
+| Curtis      | United States of America |
+| Randall     | United States of America |
+| Peter       | United States of America |
+| Winston     | United States of America |
+| Jean        | United States of America |
+| Martha      | United States of America |
+| Girard      | United States of America |
+| Nandita     | United States of America |
+| Alexis      | United States of America |
+| Julia       | United States of America |
+| Anthony     | United States of America |
+| Kelly       | United States of America |
+| Jennifer    | United States of America |
+| Timothy     | United States of America |
+| Randall     | United States of America |
+| Sarah       | United States of America |
+| Britney     | United States of America |
+| Samuel      | United States of America |
+| Vance       | United States of America |
+| Alana       | United States of America |
+| Kevin       | United States of America |
+| Donald      | United States of America |
+| Douglas     | United States of America |
+| Jennifer    | United States of America |
+| Den         | United States of America |
+| Alexander   | United States of America |
+| Shelli      | United States of America |
+| Sigal       | United States of America |
+| Guy         | United States of America |
+| Karen       | United States of America |
+| Steven      | United States of America |
+| Neena       | United States of America |
+| Lex         | United States of America |
+| Nancy       | United States of America |
+| Daniel      | United States of America |
+| John        | United States of America |
+| Ismael      | United States of America |
+| Jose Manuel | United States of America |
+| Luis        | United States of America |
+| Shelley     | United States of America |
+| William     | United States of America |
+| Michael     | Canada                   |
+| Pat         | Canada                   |
+| Susan       | United Kingdom           |
+| John        | United Kingdom           |
+| Karen       | United Kingdom           |
+| Alberto     | United Kingdom           |
+| Gerald      | United Kingdom           |
+| Eleni       | United Kingdom           |
+| Peter       | United Kingdom           |
+| David       | United Kingdom           |
+| Peter       | United Kingdom           |
+| Christopher | United Kingdom           |
+| Nanette     | United Kingdom           |
+| Oliver      | United Kingdom           |
+| Janette     | United Kingdom           |
+| Patrick     | United Kingdom           |
+| Allan       | United Kingdom           |
+| Lindsey     | United Kingdom           |
+| Louise      | United Kingdom           |
+| Sarath      | United Kingdom           |
+| Clara       | United Kingdom           |
+| Danielle    | United Kingdom           |
+| Mattea      | United Kingdom           |
+| David       | United Kingdom           |
+| Sundar      | United Kingdom           |
+| Amit        | United Kingdom           |
+| Lisa        | United Kingdom           |
+| Harrison    | United Kingdom           |
+| Tayler      | United Kingdom           |
+| William     | United Kingdom           |
+| Elizabeth   | United Kingdom           |
+| Sundita     | United Kingdom           |
+| Ellen       | United Kingdom           |
+| Alyssa      | United Kingdom           |
+| Jonathon    | United Kingdom           |
+| Jack        | United Kingdom           |
+| Charles     | United Kingdom           |
+| Hermann     | Germany                  |
++-------------+--------------------------+
+106 rows in set (0.00 sec)

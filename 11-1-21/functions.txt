@@ -1,0 +1,308 @@
+1. -> mysql>mysql> select first_name from employees where month(hire_date)=5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+-------------+--------+---------+
+| first_name  | salary | Rounded |
++---------' at line 1
+mysql> +------------+
+    -> | first_name |
+    -> +------------+
+    -> | Bruce      |
+    -> | Alexander  |
+    -> | Payam      |
+    -> | Ellen      |
+    -> | Kimberely  |
+    -> | Kevin      |
+    -> +------------+
+    -> 6 rows in set (0.00 sec)
+    ->
+2.    -> mysql> select first_name ,salary ,round(salary,-3) as Rounded from employees;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+------------+
+| first_name |
++------------+
+| Bruce      |
+| Alexander  |
+| Pay' at line 1
+mysql> +-------------+--------+---------+
+    -> | first_name  | salary | Rounded |
+    -> +-------------+--------+---------+
+    -> | Steven      |  24000 |   24000 |
+    -> | Neena       |  17000 |   17000 |
+    -> | Lex         |  17000 |   17000 |
+    -> | Alexander   |   9000 |    9000 |
+    -> | Bruce       |   6000 |    6000 |
+    -> | David       |   4800 |    5000 |
+    -> | Valli       |   4800 |    5000 |
+    -> | Diana       |   4200 |    4000 |
+    -> | Nancy       |  12000 |   12000 |
+    -> | Daniel      |   9000 |    9000 |
+    -> | John        |   8200 |    8000 |
+    -> | Ismael      |   7700 |    8000 |
+    -> | Jose Manuel |   7800 |    8000 |
+    -> | Luis        |   6900 |    7000 |
+    -> | Den         |  11000 |   11000 |
+    -> | Alexander   |   3100 |    3000 |
+    -> | Shelli      |   2900 |    3000 |
+    -> | Sigal       |   2800 |    3000 |
+    -> | Guy         |   2600 |    3000 |
+    -> | Karen       |   2500 |    2000 |
+    -> | Matthew     |   8000 |    8000 |
+    -> | Adam        |   8200 |    8000 |
+    -> | Payam       |   7900 |    8000 |
+    -> | Shanta      |   6500 |    6000 |
+    -> | Kevin       |   5800 |    6000 |
+    -> | Julia       |   3200 |    3000 |
+    -> | Irene       |   2700 |    3000 |
+    -> | James       |   2400 |    2000 |
+    -> | Steven      |   2200 |    2000 |
+    -> | Laura       |   3300 |    3000 |
+    -> | Mozhe       |   2800 |    3000 |
+    -> | James       |   2500 |    2000 |
+    -> | TJ          |   2100 |    2000 |
+    -> | Jason       |   3300 |    3000 |
+    -> | Michael     |   2900 |    3000 |
+    -> | Ki          |   2400 |    2000 |
+    -> | Hazel       |   2200 |    2000 |
+    -> | Renske      |   3600 |    4000 |
+    -> | Stephen     |   3200 |    3000 |
+    -> | John        |   2700 |    3000 |
+    -> | Joshua      |   2500 |    2000 |
+    -> | Trenna      |   3500 |    4000 |
+    -> | Curtis      |   3100 |    3000 |
+    -> | Randall     |   2600 |    3000 |
+    -> | Peter       |   2500 |    2000 |
+    -> | John        |  14000 |   14000 |
+    -> | Karen       |  13500 |   14000 |
+    -> | Alberto     |  12000 |   12000 |
+    -> | Gerald      |  11000 |   11000 |
+    -> | Eleni       |  10500 |   10000 |
+    -> | Peter       |  10000 |   10000 |
+    -> | David       |   9500 |   10000 |
+    -> | Peter       |   9000 |    9000 |
+    -> | Christopher |   8000 |    8000 |
+    -> | Nanette     |   7500 |    8000 |
+    -> | Oliver      |   7000 |    7000 |
+    -> | Janette     |  10000 |   10000 |
+    -> | Patrick     |   9500 |   10000 |
+    -> | Allan       |   9000 |    9000 |
+    -> | Lindsey     |   8000 |    8000 |
+    -> | Louise      |   7500 |    8000 |
+    -> | Sarath      |   7000 |    7000 |
+    -> | Clara       |  10500 |   10000 |
+    -> | Danielle    |   9500 |   10000 |
+    -> | Mattea      |   7200 |    7000 |
+    -> | David       |   6800 |    7000 |
+    -> | Sundar      |   6400 |    6000 |
+    -> | Amit        |   6200 |    6000 |
+    -> | Lisa        |  11500 |   12000 |
+    -> | Harrison    |  10000 |   10000 |
+    -> | Tayler      |   9600 |   10000 |
+    -> | William     |   7400 |    7000 |
+    -> | Elizabeth   |   7300 |    7000 |
+    -> | Sundita     |   6100 |    6000 |
+    -> | Ellen       |  11000 |   11000 |
+    -> | Alyssa      |   8800 |    9000 |
+    -> | Jonathon    |   8600 |    9000 |
+    -> | Jack        |   8400 |    8000 |
+    -> | Kimberely   |   7000 |    7000 |
+    -> | Charles     |   6200 |    6000 |
+    -> | Winston     |   3200 |    3000 |
+    -> | Jean        |   3100 |    3000 |
+    -> | Martha      |   2500 |    2000 |
+    -> | Girard      |   2800 |    3000 |
+    -> | Nandita     |   4200 |    4000 |
+    -> | Alexis      |   4100 |    4000 |
+    -> | Julia       |   3400 |    3000 |
+    -> | Anthony     |   3000 |    3000 |
+    -> | Kelly       |   3800 |    4000 |
+    -> | Jennifer    |   3600 |    4000 |
+    -> | Timothy     |   2900 |    3000 |
+    -> | Randall     |   2500 |    2000 |
+    -> | Sarah       |   4000 |    4000 |
+    -> | Britney     |   3900 |    4000 |
+    -> | Samuel      |   3200 |    3000 |
+    -> | Vance       |   2800 |    3000 |
+    -> | Alana       |   3100 |    3000 |
+    -> | Kevin       |   3000 |    3000 |
+    -> | Donald      |   2600 |    3000 |
+    -> | Douglas     |   2600 |    3000 |
+    -> | Jennifer    |   4400 |    4000 |
+    -> | Michael     |  13000 |   13000 |
+    -> | Pat         |   6000 |    6000 |
+    -> | Susan       |   6500 |    6000 |
+    -> | Hermann     |  10000 |   10000 |
+    -> | Shelley     |  12000 |   12000 |
+    -> | William     |   8300 |    8000 |
+    -> +-------------+--------+---------+
+    -> 107 rows in set (0.01 sec)
+
+3. select emp.first_name,jh.start_date from employees emp ,job_history jh where emp.employee_id=jh.employee_id;
++------------+------------+
+| first_name | start_date |
++------------+------------+
+| Michael    | 1996-02-17 |
+| Den        | 1998-03-24 |
+| Payam      | 1999-01-01 |
+| Lex        | 1993-01-13 |
+| Jonathon   | 1998-03-24 |
+| Jonathon   | 1999-01-01 |
+| Jennifer   | 1987-09-17 |
+| Jennifer   | 1994-07-01 |
+| Neena      | 1989-09-21 |
+| Neena      | 1993-10-28 |
++------------+------------+
+10 rows in set (0.00 sec)
+
+4. mysql>mysql> select emp.first_name,year(jh.end_date)-year(jh.start_date) as exp from employees emp ,job_history jh where emp.employee_id=jh.employee_id;
++------------+------+
+| first_name | exp  |
++------------+------+
+| Neena      |    4 |
+| Neena      |    4 |
+| Lex        |    5 |
+| Den        |    1 |
+| Payam      |    0 |
+| Jonathon   |    0 |
+| Jonathon   |    0 |
+| Jennifer   |    6 |
+| Jennifer   |    4 |
+| Michael    |    3 |
++------------+------+
+10 rows in set (0.01 sec)
+
+5. ysql> select first_name,length(first_name) as length from employees where last_name like '___b%';
++------------+--------+
+| first_name | length |
++------------+--------+
+| Gerald     |      6 |
+| Nanette    |      7 |
++------------+--------+
+2 rows in set (0.00 sec)
+
+
+6. mysql> select upper(first_name),lower(email) from employees where strcmp(first_name,email);
++-------------------+--------------+
+| upper(first_name) | lower(email) |
++-------------------+--------------+
+| STEVEN            | sking        |
+| NEENA             | nkochhar     |
+| LEX               | ldehaan      |
+| ALEXANDER         | ahunold      |
+| BRUCE             | bernst       |
+| DAVID             | daustin      |
+| VALLI             | vpatabal     |
+| DIANA             | dlorentz     |
+| NANCY             | ngreenbe     |
+| DANIEL            | dfaviet      |
+| JOHN              | jchen        |
+| ISMAEL            | isciarra     |
+| JOSE MANUEL       | jmurman      |
+| LUIS              | lpopp        |
+| DEN               | drapheal     |
+| ALEXANDER         | akhoo        |
+| SHELLI            | sbaida       |
+| SIGAL             | stobias      |
+| GUY               | ghimuro      |
+| KAREN             | kcolmena     |
+| MATTHEW           | mweiss       |
+| ADAM              | afripp       |
+| PAYAM             | pkauflin     |
+| SHANTA            | svollman     |
+| KEVIN             | kmourgos     |
+| JULIA             | jnayer       |
+| IRENE             | imikkili     |
+| JAMES             | jlandry      |
+| STEVEN            | smarkle      |
+| LAURA             | lbissot      |
+| MOZHE             | matkinso     |
+| JAMES             | jamrlow      |
+| TJ                | tjolson      |
+| JASON             | jmallin      |
+| MICHAEL           | mrogers      |
+| KI                | kgee         |
+| HAZEL             | hphiltan     |
+| RENSKE            | rladwig      |
+| STEPHEN           | sstiles      |
+| JOHN              | jseo         |
+| JOSHUA            | jpatel       |
+| TRENNA            | trajs        |
+| CURTIS            | cdavies      |
+| RANDALL           | rmatos       |
+| PETER             | pvargas      |
+| JOHN              | jrussel      |
+| KAREN             | kpartner     |
+| ALBERTO           | aerrazur     |
+| GERALD            | gcambrau     |
+| ELENI             | ezlotkey     |
+| PETER             | ptucker      |
+| DAVID             | dbernste     |
+| PETER             | phall        |
+| CHRISTOPHER       | colsen       |
+| NANETTE           | ncambrau     |
+| OLIVER            | otuvault     |
+| JANETTE           | jking        |
+| PATRICK           | psully       |
+| ALLAN             | amcewen      |
+| LINDSEY           | lsmith       |
+| LOUISE            | ldoran       |
+| SARATH            | ssewall      |
+| CLARA             | cvishney     |
+| DANIELLE          | dgreene      |
+| MATTEA            | mmarvins     |
+| DAVID             | dlee         |
+| SUNDAR            | sande        |
+| AMIT              | abanda       |
+| LISA              | lozer        |
+| HARRISON          | hbloom       |
+| TAYLER            | tfox         |
+| WILLIAM           | wsmith       |
+| ELIZABETH         | ebates       |
+| SUNDITA           | skumar       |
+| ELLEN             | eabel        |
+| ALYSSA            | ahutton      |
+| JONATHON          | jtaylor      |
+| JACK              | jlivings     |
+| KIMBERELY         | kgrant       |
+| CHARLES           | cjohnson     |
+| WINSTON           | wtaylor      |
+| JEAN              | jfleaur      |
+| MARTHA            | msulliva     |
+| GIRARD            | ggeoni       |
+| NANDITA           | nsarchan     |
+| ALEXIS            | abull        |
+| JULIA             | jdelling     |
+| ANTHONY           | acabrio      |
+| KELLY             | kchung       |
+| JENNIFER          | jdilly       |
+| TIMOTHY           | tgates       |
+| RANDALL           | rperkins     |
+| SARAH             | sbell        |
+| BRITNEY           | beverett     |
+| SAMUEL            | smccain      |
+| VANCE             | vjones       |
+| ALANA             | awalsh       |
+| KEVIN             | kfeeney      |
+| DONALD            | doconnel     |
+| DOUGLAS           | dgrant       |
+| JENNIFER          | jwhalen      |
+| MICHAEL           | mhartste     |
+| PAT               | pfay         |
+| SUSAN             | smavris      |
+| HERMANN           | hbaer        |
+| SHELLEY           | shiggins     |
+| WILLIAM           | wgietz       |
++-------------------+--------------+
+107 rows in set (0.01 sec)
+
+
+7. mysql> select * from employees where year(hire_date)=2021;
+Empty set (0.00 sec)
+
+8. mysql> select count(first_name) as number_of_employees, month(hire_date) as Months from employees where year(hire_date)=2021 order by month(hire_date);
++---------------------+--------+
+| number_of_employees | Months |
++---------------------+--------+
+|                   0 |   NULL |
++---------------------+--------+
+1 row in set (0.00 sec)
+
+
+
