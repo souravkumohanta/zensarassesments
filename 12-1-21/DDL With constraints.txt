@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1.mysql> create table Customer (custId varchar(10) not null,firstName varchar(10) NOT NULL,lastName varchar(10) , age int ,CHECK(age>=18), city varchar(20) ,mobNum int UNIQUE,dob date, PRIMARY KEY (custId)) ;
 Query OK, 0 rows affected (0.06 sec)
 
@@ -12,4 +13,20 @@ Query OK, 0 rows affected (0.09 sec)
 Query OK, 0 rows affected (0.05 sec)
 
 5.mysql> create table loan (LoanId varchar(20),loanAmount int ,Check(loanAmount>0),bankId varchar(20) NOT NULL,Constraint bnk_brch foreign key(BankId) references Branch(branchId));
+=======
+1.mysql> create table Customer (custId varchar(10) not null,firstName varchar(10) NOT NULL,lastName varchar(10) , age int ,CHECK(age>=18), city varchar(20) ,mobNum int UNIQUE,dob date, PRIMARY KEY (custId)) ;
+Query OK, 0 rows affected (0.06 sec)
+
+2.mysql> create table branch (branchId varchar(20) primary key , branchName varchar(30) NOT NULL , CITY VARCHAR(10) NOT NULL);
+Query OK, 0 rows affected (0.06 sec)
+
+3.mysql> CREATE TABLE ACCOUNT (accountNumber int ,openingBalance int ,CHECK(openingBalance>5000),typeOfAccount enum('saving','current') ,status varchar(10),BankId varchar(10) NOT NULL,CustId varchar(10) NOT NULL,primary key(accountNumber) , 
+Foreign key(BankId) references branch(BranchId),foreign key(CustId) references Customer(custId));
+Query OK, 0 rows affected (0.09 sec)
+
+4.mysql> create table transaction(transactionId varchar(10) NOT NULL,transactionDate date,MediumOfTransaction varchar(20),TransactionAmount int, primary key(transactionId));
+Query OK, 0 rows affected (0.05 sec)
+
+5.mysql> create table loan (LoanId varchar(20),loanAmount int ,Check(loanAmount>0),bankId varchar(20) NOT NULL,Constraint bnk_brch foreign key(BankId) references Branch(branchId));
+>>>>>>> 73cffa194613de314f8b46250dcc699ac4bcb9b5
 Query OK, 0 rows affected (0.46 sec)
