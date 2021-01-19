@@ -1,2 +1,3 @@
 SQL : DONE
 CORE JAVA : UPTO Assignment 5 done 
+Pending : Assignment 6(banking project)
