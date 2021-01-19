@@ -1,2 +1,2 @@
 SQL : DONE
-CORE JAVA : Remaining
+CORE JAVA : UPTO Assignment 5 done

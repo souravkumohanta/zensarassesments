@@ -1,0 +1,93 @@
+import java.util.*;
+import java.io.*;
+public class employeeDetails
+{
+
+
+
+public employeeDetails()
+{
+
+  int n=0;
+}
+String[] name;
+String[] id;
+static double[] salary;
+static String[] desig;
+public void read(int n)
+{
+    
+    
+System.out.println("Enter the name , Id , salary , designation : ");
+Scanner sc=new Scanner(System.in);
+for(int i=0;i<n;i++)
+{
+
+System.out.println("Enter name:");
+name[i]=sc.next();
+
+System.out.print("Enter salary:  ");
+salary[i]=sc.nextDouble();
+
+System.out.println("Enter ID:");
+id[i]=sc.next();
+
+
+
+System.out.print("Enter designation:  ");
+desig[i]=sc.next();
+}
+}
+
+public double sal(double salaryr)
+{
+
+ salaryr=salaryr+(.1*salaryr)+((.07*salaryr)-(.05*salaryr));
+return salaryr;
+}
+
+public double bonus(double sal,String des)
+{
+
+double salary=sal;
+if(des.equals("manager"))
+{
+salary=(.15*salary)+salary;
+}
+else if(des.equals("developer"))
+{
+salary=(.10*salary)+salary;
+}
+else
+salary=(.05*salary)+salary;
+
+return salary;
+}
+
+public void display(int n)
+{
+    
+for(int i=0;i<n;i++)
+{
+System.out.println("Name : "+name[i]);
+System.out.println("salary : "+salary[i]);
+System.out.println("Designation is : "+desig[i]);
+}
+}
+public static void main(String args[])
+{
+
+Scanner br=new Scanner(System.in);
+employeeDetails obj=new employeeDetails();
+System.out.println("Enter the number of records : ");
+int m=br.nextInt();
+obj.read(m);
+for(int i=0;i<m;i++)
+{
+
+obj.sal(salary[i])=salary[i];
+obj.bonus(salary[i],desig[i])=salary[i];
+}
+obj.display(m);
+}
+}
