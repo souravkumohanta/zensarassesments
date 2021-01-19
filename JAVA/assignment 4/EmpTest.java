@@ -26,11 +26,10 @@ salary= salary+HRA+DA-PF;
 
 void display()
 {
-System.out.println("Employee Details");
-System.out.println("\n---------------------------");
-System.out.println("ID of the Employee: "+id);
-System.out.println("Name of the Employee: "+name);
-System.out.println("Salary of the Employee: "+salary);
+	System.out.println("Employee Details");
+	System.out.println("ID : "+id);
+	System.out.println("Name : "+name);
+	System.out.println("Salary : "+salary);
 
 }
 }
@@ -98,8 +97,8 @@ Manager mgr=new Manager();
 mgr.read();
 mgr.readmgr();
 System.out.println("programmer details ");
-Programmer prg=new Programmer();
-prg.read();
+Programmer prg=new Programmer();// object created
+prg.read();// function calls
 prg.readprg();
 mgr.calSalary();
 prg.calSalary();

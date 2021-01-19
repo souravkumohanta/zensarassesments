@@ -9,11 +9,11 @@ class Student
 	Scanner sc = new Scanner(System.in);
 	public void read()
 	{
-		System.out.println("Please Enter the Your Id, Name and Age");
+		System.out.println("Enter the Your Id, Name and Age");
 		sId = sc.nextInt();
 		sName = sc.next();
 		age = sc.nextInt();
-		System.out.println("Please Enter Your Marks Of Physics, Chemistry, Maths, Biology In sqeuence Please ! ");
+		System.out.println("Enter Marks in Physics, Chemistry, Maths, Biology In sqeuence Please ! ");
 		for(int i=0;i<4;i++)
 		{
 			marks[i] = sc.nextInt();
@@ -43,11 +43,11 @@ class Student
 		System.out.println("Id                 :"+sId);
 		System.out.println("Name               :"+sName);
 		System.out.println("Age                :" + age);
-		System.out.println("Marrks id Physics  :"+marks[0]);
-		System.out.println("Marrks id Chemistry:"+marks[1]);
-		System.out.println("Marrks id Maths    :"+marks[2]);
-		System.out.println("Marrks id Biology  :"+marks[3]);
-		System.out.println("Grade              :"+grade);
+		System.out.println("Marks in Physics  :"+marks[0]);
+		System.out.println("Marks in  Chemistry:"+marks[1]);
+		System.out.println("Marks in  Maths    :"+marks[2]);
+		System.out.println("Marks in Biology  :"+marks[3]);
+		System.out.println("Grade point average :"+grade);
 	}
 }
 class StudentTestA5
