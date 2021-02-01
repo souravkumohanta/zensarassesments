@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);">
+
+    <div style="padding: 10px; border: 5px solid rgb(14, 63, 34);margin: 1px;background:linear-gradient(to bottom, #33ccff 0%, #ff9966 100%); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+  
+
+    
+        <h2>
+            Calculator:
+        </h2>
+
+        <label>1st number :     </label>
+        <input type="text" id="first" name="first">
+        <br>
+        <br>
+        <label for="">2nd number:   </label>
+        <input type="text" name="second" id="second">
+
+        <br>
+        <br>
+        <label for="">Result: </label>
+        <textarea name="result" id="result" cols="30" rows="1" style="text-align: center;">   </textarea>
+          <br>
+         <br>
+
+        <button id="add" onclick="add()">ADD</button>
+
+        
+        <button id="sub" onclick="sub()">SUB</button>
+
+        
+
+    
+    </div>
+
+    
+
+    <script>
+
+        
+        
+        function add() {
+            var a1=parseInt(document.getElementById("first").value);
+            var b1=parseInt(document.getElementById("second").value);
+            var c=a1+b1;
+            document.getElementById("result").value=c;
+        }
+        function sub() {
+            var a1=parseInt(document.getElementById("first").value);
+            var b1=parseInt(document.getElementById("second").value);
+            var c=a1-b1;
+            document.getElementById("result").value=c;
+        }
+
+    </script>
+   
+
+</body>
+</html>

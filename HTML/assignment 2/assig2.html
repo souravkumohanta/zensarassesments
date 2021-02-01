@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<H2>Assignment 2</H2>
+
+<button type="button" id="start" onclick="assig2()">start</button>
+<script>
+
+ function assig2()
+ {   
+    var x;
+    do{
+       
+        
+        var a=prompt("enter 1st value: ");
+        var b=prompt("enter the 2nd value: ");
+        alert("enter the choice 1 for add 2 for subtract : ");
+        var c=prompt("enter the choice : ");
+        alert("the choice is "+c);
+
+        switch(eval(c))
+        {
+            case 1: var sum = eval(a)+eval(b);
+            alert("sum is "+sum);
+            break;
+
+            case 2: var sub=eval(a)-eval(b);
+            alert("sub is :"+sub);
+            break;
+
+            case 3: x=4;
+            break;
+
+            default: alert("Invalid");
+            break;
+        }
+    }while(x!=4)
+}
+</script>
+
+</body>
+</html>
